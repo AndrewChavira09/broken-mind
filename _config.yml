@@ -1,5 +1,2 @@
-include:
-  - "*.html"
-  - "*.js" 
-  - "*.css"
-  - "img/"
+theme: null
+include: [".nojekyll", "*.html", "*.js", "*.css", "img/*"]
