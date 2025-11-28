@@ -229,6 +229,40 @@
             transition: width 0.3s ease;
         }
 
+        /* ESTILOS PARA VIDEOS */
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 30px;
+        }
+
+        .video-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #ff0000;
+            text-align: center;
+            margin: 0;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+
+        .video-wrapper {
+            width: 80%;
+            max-width: 900px;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* AJUSTES PARA IMPRESIÓN (PDF) */
         @media print {
             @page { size: 1280px 720px; margin: 0; }
@@ -250,10 +284,30 @@
                     </div>
                     <h1>BROKEN MIND</h1>
                 </div>
-                <div class="slide-number">1/10</div>
+                <div class="slide-number">1/12</div>
             </div>
 
-            <!-- 2. CONCEPTO -->
+            <!-- 2. VIDEO TRÁILER -->
+            <div class="slide">
+                <div class="bg-blood" style="opacity: 0.3;"></div>
+                <div class="content">
+                    <div class="video-container">
+                        <h2 class="video-title">TRÁILER</h2>
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/trailer.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                        <p style="text-align: center; color: #ccc; font-style: italic;">
+                            Descubre la atmósfera psicológica de Broken Mind
+                        </p>
+                    </div>
+                </div>
+                <div class="slide-number">2/12</div>
+            </div>
+
+            <!-- 3. CONCEPTO -->
             <div class="slide">
                 <div class="bg-blood" style="opacity: 0.3;"></div>
                 <div class="content">
@@ -275,18 +329,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-number">2/10</div>
+                <div class="slide-number">3/12</div>
             </div>
 
-            <!-- 3. MERCADO META -->
+            <!-- 4. MERCADO META -->
             <div class="slide">
                 <div class="content">
                     <h2>2. Mercado Meta</h2>
                     <div class="grid-2">
                         <div>
+                            <h3 style="font-size: 2rem; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3);">Arquetipo: "Sofía"</h3>
                             <ul style="list-style: none; padding: 0; border-left: 1px solid #333; padding-left: 20px;">
                                 <li style="padding: 10px 0;"><strong>Edad:</strong> 16 - 30 años (Jóvenes Adultos).</li>
-                                <li style="padding: 10px 0;"><strong>Ubicación:</strong> Latinoamérica</li>
+                                <li style="padding: 10px 0;"><strong>Ubicación:</strong> Zonas urbanas de LATAM.</li>
                                 <li style="padding: 10px 0;"><strong>Intereses:</strong> Psicología, Salud Mental, Arte Indie.</li>
                                 <li style="padding: 10px 0;"><strong>Plataforma:</strong> PC (Steam) y Switch.</li>
                             </ul>
@@ -298,10 +353,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-number">3/10</div>
+                <div class="slide-number">4/12</div>
             </div>
 
-            <!-- 4. PROPUESTA DE VALOR -->
+            <!-- 5. PROPUESTA DE VALOR -->
             <div class="slide">
                 <div class="content">
                     <h2>3. Propuesta de Valor</h2>
@@ -323,10 +378,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-number">4/10</div>
+                <div class="slide-number">5/12</div>
             </div>
 
-            <!-- 5. FACTIBILIDAD -->
+            <!-- 6. FACTIBILIDAD -->
             <div class="slide">
                 <div class="content">
                     <h2>4. Factibilidad Técnica y Operativa</h2>
@@ -351,10 +406,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-number">5/10</div>
+                <div class="slide-number">6/12</div>
             </div>
 
-            <!-- 6. PROTOTIPO -->
+            <!-- 7. PROTOTIPO -->
             <div class="slide">
                 <div class="content">
                     <h2>5. Descripción del Prototipo (MVP)</h2>
@@ -382,10 +437,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-number">6/10</div>
+                <div class="slide-number">7/12</div>
             </div>
 
-            <!-- 7. CANVAS -->
+            <!-- 8. CANVAS -->
             <div class="slide">
                 <div class="content">
                     <h2>6. Modelo de Negocio Canvas</h2>
@@ -406,13 +461,13 @@
                         </tr>
                         <tr><th>Recursos</th><th>Canales</th></tr>
                         <tr><td>• Equipo<br>• IP</td><td>• Steam<br>• Redes</td></tr>
-                        <tr><td colspan="3" style="border-top: 2px solid #ff0000;"><strong>Costos:</strong> Nómina, Licencias, Mkt, Assets ($1,000 MXN).</td><td colspan="2" style="border-top: 2px solid #ff0000; color: #ff3333;"><strong>Ingresos:</strong> Venta Juego ($200 MXN).</td></tr>
+                        <tr><td colspan="3" style="border-top: 2px solid #ff0000;"><strong>Costos:</strong> Nómina, Licencias, Mkt, Assets ($1,000 MXN).</td><td colspan="2" style="border-top: 2px solid #ff0000; color: #ff3333;"><strong>Ingresos:</strong> Venta Juego ($250 MXN).</td></tr>
                     </table>
                 </div>
-                <div class="slide-number">7/10</div>
+                <div class="slide-number">8/12</div>
             </div>
 
-            <!-- 8. ALCANCE -->
+            <!-- 9. ALCANCE -->
             <div class="slide">
                 <div class="content">
                     <h2>7. Alcance del MVP</h2>
@@ -421,7 +476,7 @@
                             <h3 style="color: #00ff00;">INCLUIDO (CORE)</h3>
                             <ul style="list-style: none; padding: 0;">
                                 <li>✓ 8 Habitaciones Psicológicas.</li>
-                                <li>✓ 5 Puzzles Narrativos.</li>
+                                <li>✓ 6 Puzzles Narrativos.</li>
                                 <li>✓ Luz Atmosférica.</li>
                                 <li>✓ 2 Finales (Sanación/Perdición).</li>
                                 <li>✓ Enemigos: Sombra y Voz.</li>
@@ -440,13 +495,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-number">8/10</div>
+                <div class="slide-number">9/12</div>
             </div>
 
-            <!-- 9. PRESUPUESTO (MXN) -->
+            <!-- 10. PRESUPUESTO (MXN) -->
             <div class="slide">
                 <div class="content">
                     <h2>8. Factibilidad Económica</h2>
+                    <p>Comparativa: Valor Total (Nómina) vs. Gasto en Efectivo.</p>
                     <div class="grid-2">
                         <div class="box" style="text-align: center; border: 1px solid #ff0000; padding: 40px;">
                             <h3 style="color: #fff;">Valor Total Estimado</h3>
@@ -457,11 +513,10 @@
                         <div class="box">
                             <h3>Desglose Mensual (MXN)</h3>
                             <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
-                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Programador Líder</span><span>$22,000</span></li>
-                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Programador Gameplay</span><span>$19,000</span></li>
-                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Artista 2D</span><span>$19,000</span></li>
-                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Diseñador del videojuego</span><span>$18,000</span></li>
-                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>QA (Control de calidad)</span><span>$12,000</span></li>
+                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Programador</span><span>$20,000</span></li>
+                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Artista</span><span>$18,000</span></li>
+                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Game Designer</span><span>$22,000</span></li>
+                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333;"><span>Audio & MKT</span><span>$30,000</span></li>
                                 <li style="display: flex; justify-content: space-between; margin-top: 10px; color: #ff3333;"><span><strong>Total Mes</strong></span><span><strong>$90,000</strong></span></li>
                             </ul>
                             <div style="margin-top: 20px; text-align: center; padding-top: 10px; border-top: 1px solid #444;">
@@ -470,10 +525,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-number">9/10</div>
+                <div class="slide-number">10/12</div>
             </div>
 
-            <!-- 10. ROADMAP Y CIERRE -->
+            <!-- 11. ROADMAP Y CIERRE -->
             <div class="slide">
                 <div class="content">
                     <h2>9. Roadmap</h2>
@@ -498,7 +553,27 @@
                     <br><br><br>
                     <h1 style="font-size: 4rem; color: #ff0000; text-shadow: 0 0 20px #ff0000;">¡GRACIAS!</h1>
                 </div>
-                <div class="slide-number">10/10</div>
+                <div class="slide-number">11/12</div>
+            </div>
+
+            <!-- 12. VIDEO GAMEPLAY -->
+            <div class="slide">
+                <div class="bg-blood" style="opacity: 0.3;"></div>
+                <div class="content">
+                    <div class="video-container">
+                        <h2 class="video-title">GAMEPLAY</h2>
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/gameplay.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                        <p style="text-align: center; color: #ccc; font-style: italic;">
+                            Experimenta la jugabilidad y mecánicas de Broken Mind
+                        </p>
+                    </div>
+                </div>
+                <div class="slide-number">12/12</div>
             </div>
         </div>
 
@@ -525,8 +600,19 @@
             let currentSlide = 0;
             const totalSlides = slides.length;
 
+            // Pausar videos cuando se cambia de slide
+            function pauseAllVideos() {
+                const videos = document.querySelectorAll('video');
+                videos.forEach(video => {
+                    video.pause();
+                });
+            }
+
             // Función para actualizar la presentación
             function updatePresentation() {
+                // Pausar todos los videos
+                pauseAllVideos();
+                
                 // Ocultar todas las diapositivas
                 slides.forEach(slide => {
                     slide.classList.remove('active');
