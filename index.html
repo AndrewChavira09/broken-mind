@@ -229,7 +229,7 @@
             transition: width 0.3s ease;
         }
 
-        /* ESTILOS PARA VIDEOS */
+        /* ESTILOS PARA VIDEOS Y EMBEDS */
         .video-container {
             display: flex;
             flex-direction: column;
@@ -257,10 +257,39 @@
             box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
         }
 
-        .video-wrapper video {
+        .video-embed {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 0;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            position: relative;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .youtube-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff3333;
+            text-decoration: none;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .youtube-link:hover {
+            background: rgba(255, 0, 0, 0.4);
+            color: #fff;
+            transform: translateY(-2px);
         }
 
         /* AJUSTES PARA IMPRESIÓN (PDF) */
@@ -294,11 +323,19 @@
                     <div class="video-container">
                         <h2 class="video-title">TRÁILER</h2>
                         <div class="video-wrapper">
-                            <video controls>
-                                <source src="img/trailer.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento video.
-                            </video>
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/D2fR0M36uu4" 
+                                        title="Tráiler de Broken Mind" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
+                        <a href="https://www.youtube.com/watch?v=D2fR0M36uu4" 
+                           target="_blank" 
+                           class="youtube-link">
+                            <i class="fab fa-youtube"></i> Ver en YouTube
+                        </a>
                         <p style="text-align: center; color: #ccc; font-style: italic;">
                             Descubre la atmósfera psicológica de Broken Mind
                         </p>
@@ -461,7 +498,7 @@
                         </tr>
                         <tr><th>Recursos</th><th>Canales</th></tr>
                         <tr><td>• Equipo<br>• IP</td><td>• Steam<br>• Redes</td></tr>
-                        <tr><td colspan="3" style="border-top: 2px solid #ff0000;"><strong>Costos:</strong> Nómina, Licencias, Mkt, Assets ($1,000 MXN).</td><td colspan="2" style="border-top: 2px solid #ff0000; color: #ff3333;"><strong>Ingresos:</strong> Venta Juego ($250 MXN).</td></tr>
+                        <tr><td colspan="3" style="border-top: 2px solid #ff0000;"><strong>Costos:</strong> Nómina, Licencias, Mkt, Assets ($1,000 MXN).</td><td colspan="2" style="border-top: 2px solid #ff0000; color: #ff3333;"><strong>Ingresos:</strong> Venta Juego ($200 MXN).</td></tr>
                     </table>
                 </div>
                 <div class="slide-number">8/12</div>
@@ -563,11 +600,19 @@
                     <div class="video-container">
                         <h2 class="video-title">GAMEPLAY</h2>
                         <div class="video-wrapper">
-                            <video controls>
-                                <source src="img/gameplay.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento video.
-                            </video>
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/38ei7HHo7hw" 
+                                        title="Gameplay de Broken Mind" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
                         </div>
+                        <a href="https://youtu.be/38ei7HHo7hw" 
+                           target="_blank" 
+                           class="youtube-link">
+                            <i class="fab fa-youtube"></i> Ver en YouTube
+                        </a>
                         <p style="text-align: center; color: #ccc; font-style: italic;">
                             Experimenta la jugabilidad y mecánicas de Broken Mind
                         </p>
@@ -600,19 +645,8 @@
             let currentSlide = 0;
             const totalSlides = slides.length;
 
-            // Pausar videos cuando se cambia de slide
-            function pauseAllVideos() {
-                const videos = document.querySelectorAll('video');
-                videos.forEach(video => {
-                    video.pause();
-                });
-            }
-
             // Función para actualizar la presentación
             function updatePresentation() {
-                // Pausar todos los videos
-                pauseAllVideos();
-                
                 // Ocultar todas las diapositivas
                 slides.forEach(slide => {
                     slide.classList.remove('active');
